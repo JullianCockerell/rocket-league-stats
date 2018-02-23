@@ -73,6 +73,7 @@ public class MainGUI extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         testURL = new javax.swing.JButton();
+        test = new javax.swing.JButton();
 
         statField2.setEditable(false);
         statField2.addActionListener(new java.awt.event.ActionListener() {
@@ -183,6 +184,13 @@ public class MainGUI extends javax.swing.JFrame {
             }
         });
 
+        test.setText("Test Output");
+        test.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                testActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -238,7 +246,8 @@ public class MainGUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(testURL)
-                            .addComponent(jButton1))))
+                            .addComponent(jButton1)
+                            .addComponent(test, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -284,6 +293,9 @@ public class MainGUI extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(testURL)
                                 .addGap(18, 18, 18)))
+                        .addGap(1, 1, 1)
+                        .addComponent(test)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(jLabel3)
@@ -449,8 +461,12 @@ public class MainGUI extends javax.swing.JFrame {
 
     private void testURLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testURLActionPerformed
         ParseInfo ref = new ParseInfo();
-        ref.printURL();
+        System.out.println(ref.useJsoup());
     }//GEN-LAST:event_testURLActionPerformed
+
+    private void testActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testActionPerformed
+        System.out.println("Test Complete!");
+    }//GEN-LAST:event_testActionPerformed
 
     /**
      * @param args the command line arguments
@@ -528,6 +544,7 @@ public class MainGUI extends javax.swing.JFrame {
     private javax.swing.JLabel stanIcon;
     private javax.swing.JTextField statField2;
     private javax.swing.JTextField statField4;
+    private javax.swing.JButton test;
     private javax.swing.JButton testURL;
     private javax.swing.JTextField winP;
     // End of variables declaration//GEN-END:variables

@@ -13,6 +13,10 @@ import org.json.simple.parser.*;
 import java.util.Iterator;
 import org.json.*;
 import java.lang.*;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 public class ParseInfo {
     public PlayerInfo ParseInfo()
@@ -147,7 +151,7 @@ public class ParseInfo {
     {
         try
         {
-            URL oracle = new URL("http://www.oracle.com/");
+            URL oracle = new URL("https://en.wikipedia.org/wiki/%22Hello%2C_World!%22_program");
             BufferedReader in = new BufferedReader(
             new InputStreamReader(oracle.openStream()));
 
@@ -166,5 +170,20 @@ public class ParseInfo {
        {
            System.out.println("IOException");
        }
+    }
+    
+    public String useJsoup()
+    {
+        String output = " ", url = "https://en.wikipedia.org/wiki/%22Hello%2C_World!%22_program";
+        try
+        {
+        Document document = Jsoup.connect(url).get();
+        output = document.select("#firstHeading").text();
+        }
+        catch(IOException e)
+        {
+            System.out.println(e);
+        }
+        return output;
     }
 }
