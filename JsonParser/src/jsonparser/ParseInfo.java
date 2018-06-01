@@ -27,7 +27,8 @@ public class ParseInfo {
        String jsonOutput= "Didn't assign";
        try
         {
-            URL url = new URL("https://api.rocketleaguestats.com/v1/player?unique_id=76561198068821663&platform_id=1");
+            //URL url = new URL("https://api.rocketleaguestats.com/v1/player?unique_id=76561198068821663&platform_id=1");
+            URL url = new URL("https://api.rocketleaguestats.com/v1/player?unique_id=Pouchetta&platform_id=1");
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod("GET");
             con.setRequestProperty("Authorization", "MF3US9NVKJ7D53EN2AO6FHFJCO7TZ8BP");
